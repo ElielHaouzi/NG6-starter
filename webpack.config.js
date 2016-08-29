@@ -13,8 +13,11 @@ module.exports = {
        { test: /\.styl$/, loader: 'style!css!stylus' },
        { test: /\.scss$/, loader: 'style!css!sass' },
        { test: /\.css$/, loader: 'style!css' },
-       { test: /\.(png|jpeg|jpg)$/, loader: 'url?limit=20000' }
+       { test: /\.(png|jpeg|jpg)$/, loader: 'url?name=images/[hash].[ext]&limit=200' }
     ]
+  },
+  resolve: {
+    root: [path.resolve('./client/assets')]
   },
   plugins: [
     // Injects bundles in your index.html instead of wiring all manually.
